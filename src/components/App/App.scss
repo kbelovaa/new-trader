@@ -1,0 +1,86 @@
+.container {
+  width: 1440px;
+  margin: 0 auto;
+}
+
+.btn-light {
+  border-radius: 2px;
+  border: 1px solid rgba(223, 223, 223, 0.80);
+  background: rgba(216, 216, 216, 0.35);
+  box-shadow: 3px 6px 15px -1px rgba(0, 0, 0, 0.10);
+  cursor: pointer;
+  padding: 20px 40px;
+  color: #284657;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.36px;
+
+  &:active,
+  &:focus,
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.solid-button {
+  padding: 0 30px;
+  height: 55px;
+  background: var(--third-color);
+  color: var(--second-color);
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  line-height: 55px;
+  border: 0;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 2px 4px 30px 4px rgba(255, 255, 255, 0.2);
+
+    .light & {
+      box-shadow: 2px 4px 30px 4px rgba(47, 115, 148, 0.2);
+    }
+  }
+
+  &:active,
+  &:focus,
+  &:focus-visible {
+    background: linear-gradient(0deg, rgba(208, 208, 208, 0.4) 0%, rgba(208, 208, 208, 0.4) 100%), #fff;
+
+    .light & {
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%), #2f7394;
+    }
+  }
+}
+
+.transparent-button {
+  padding: 0 30px;
+  height: 54px;
+  background-color: transparent;
+  color: var(--third-color);
+  font-family: 'Helvetica', sans-serif;
+  font-weight: 700;
+  line-height: 54px;
+  border: 2px solid var(--third-color);
+  box-shadow: var(--box-shadow-2);
+}
+
+.hidden {
+  display: none;
+}
+
+.input {
+  border-radius: 4px;
+  border: 1px solid #C0C0C0;
+  background: transparent;
+  padding: 20px;
+  font-family: 'SF Pro Display', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: normal;
+  transition: all 0.3s ease;
+
+  &::placeholder {
+    color: #c0c0c0;
+  }
+}

@@ -1,0 +1,210 @@
+.title {
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 70%;
+  letter-spacing: 1.2px;
+  margin-bottom: 42px;
+}
+
+.text {
+  font-family: 'Inter', sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 150%;
+  letter-spacing: 0.44px;
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 120px 100px 45px 100px;
+
+  &__title {
+    color: #274455;
+    font-size: 120px;
+    font-weight: 500;
+    line-height: 70%;
+    letter-spacing: -1.2px;
+    margin-bottom: 135px;
+  }
+
+  &__image {
+    width: 740px;
+  }
+
+  &__btn {
+    position: absolute;
+    right: 100px;
+    bottom: 133px;
+  }
+}
+
+.why {
+  padding: 100px 100px 92px;
+
+  &-section {
+    background: #DBF9FF;
+  }
+
+  &__title {
+    color: #284657;
+  }
+
+  &__text {
+    color: #274455;
+  }
+}
+
+.opportunities {
+  padding: 82px 100px 92px;
+
+  &-section {
+    background: #284657;
+  }
+
+  &__title {
+    color: #8CE4F8;
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 130%;
+    width: 940px;
+    margin-bottom: 82px;
+    letter-spacing: normal;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    color: #fff;
+    width: 347px;
+  }
+
+  &__subtitle {
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 70%;
+    letter-spacing: 0.8px;
+    margin-bottom: 22px;
+  }
+}
+
+.pricing {
+  padding: 100px 100px 92px;
+
+  &-section {
+    background: #D3D3D3;
+  }
+
+  &__title {
+    color: #284657;
+  }
+
+  &__text {
+    color: #274455;
+  }
+
+  &__payment {
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 1.5px;
+      background-color: #274455;
+    }
+  }
+}
+
+.lessons {
+  padding: 100px 100px 92px;
+
+  &__title {
+    color: #8CE4F8;
+
+    & + .lessons__text {
+      margin-bottom: 42px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 71px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__subtitle {
+    color: #284657;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 70%;
+    letter-spacing: 0.6px;
+    margin-bottom: 12px;
+  }
+}
+
+.learning {
+  padding: 50px 100px 142px;
+
+  &-wrap {
+    background: #D3D3D3;
+  }
+
+  &-intro {
+    padding: 100px 100px 42px;
+
+    &__title {
+      color: #284657;
+    }
+
+    &__text {
+      color: #284657;
+    }
+  }
+
+  &__part:first-of-type {
+    margin-bottom: 90px;
+  }
+
+  &__subtitle {
+    color: #284657;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 70%;
+    letter-spacing: 0.8px;
+    margin-bottom: 42px;
+  }
+
+  &__text {
+    color: #284657;
+  }
+}
+
+.journey {
+  padding: 100px 100px 150px;
+
+  &-section {
+    background: #284657;
+  }
+
+  &__title {
+    color: #8CE4F8;
+  }
+
+  &__text {
+    color: #fff;
+  }
+
+  &__chart {
+    width: 100%;
+  }
+}

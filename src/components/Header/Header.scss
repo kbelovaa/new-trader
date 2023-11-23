@@ -1,0 +1,46 @@
+.header {
+  color: #717171;
+  text-transform: uppercase;
+  font-weight: 400;
+  line-height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 100px;
+
+  &__label {
+    font-size: 22px;
+    cursor: pointer;
+    margin: 0 147px 0 7px;
+  }
+
+  &__links {
+    font-size: 16px;
+    display: flex;
+  }
+
+  &__link {
+    margin-right: 40px;
+    cursor: pointer;
+
+    &:last-of-type {
+      margin-right: 294px;
+    }
+  }
+}
+
+.burger {
+  cursor: pointer;
+
+  &__bar {
+    width: 40px;
+    height: 2px;
+    border-radius: 47px;
+    background: #274455;
+    margin-top: 10px;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+}
