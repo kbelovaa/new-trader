@@ -258,17 +258,18 @@
   }
 
   &__component {
-    margin-bottom: 59px;
+    margin-bottom: 60px;
 
     & .journey__subtitle {
       margin-left: 50px;
       color: #284657;
       display: inline;
+      margin-bottom: 40px;
     }
 
     & .journey__text {
       color: #0f0f0f;
-      margin-bottom: 33px;
+      margin-bottom: 29px;
       line-height: 180%;
     }
   }
@@ -291,7 +292,7 @@
 }
 
 .success {
-  padding: 100px 100px 83px;
+  padding: 100px 100px 85px;
   position: relative;
 
   &-section {
@@ -300,10 +301,11 @@
 
   &__title {
     color: #284657;
+    margin-bottom: 40px;
   }
 
   &__text {
-    margin-bottom: 33px;
+    margin-bottom: 29px;
     line-height: 180%;
   }
 
@@ -313,7 +315,7 @@
     transition: max-height 0.4s ease;
 
     .expanded & {
-      max-height: 1000px;
+      max-height: 1500px;
     }
   }
 }
