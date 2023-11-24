@@ -22,14 +22,14 @@ const Main = () => {
 
   return (
     <div className="main">
+      <button className="main__btn btn btn_transparent" onClick={() => navigate('/booking')}>
+        Book a call
+      </button>
       <section className="slide-section">
         <div className="container">
           <div className="slide">
             <h1 className="slide__title">New to trading?</h1>
             <img src={devicesImg} alt="Devices" className="slide__image" />
-            <button className="slide__btn btn btn_transparent" onClick={() => navigate('/booking')}>
-              Book a call
-            </button>
           </div>
         </div>
       </section>
