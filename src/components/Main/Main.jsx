@@ -6,6 +6,7 @@ import chart from '../../images/chart.png';
 import './Main.scss';
 
 const Main = () => {
+  const [showLessonsMore, setShowLessonsMore] = useState(false);
   const [showLearningMore, setShowLearningMore] = useState(false);
   const [showJourneyMore, setShowJourneyMore] = useState(false);
   const [showSuccessMore, setShowSuccessMore] = useState(false);
@@ -26,7 +27,9 @@ const Main = () => {
           <div className="slide">
             <h1 className="slide__title">New to trading?</h1>
             <img src={devicesImg} alt="Devices" className="slide__image" />
-            <button className="slide__btn btn btn_transparent" onClick={() => navigate('/booking')}>Book a call</button>
+            <button className="slide__btn btn btn_transparent" onClick={() => navigate('/booking')}>
+              Book a call
+            </button>
           </div>
         </div>
       </section>
@@ -92,11 +95,13 @@ const Main = () => {
       </section>
       <section ref={lessonsRef} className="lessons-section">
         <div className="container">
-          <div className="lessons">
+          <div className={`lessons ${showLessonsMore ? 'expanded' : ''}`}>
             <h2 className="lessons__title title">The lessons</h2>
             <p className="lessons__text text">
-              Each lesson covers 1-3 topics based on material complexity and comprehension
+              Trading is an incremental learning process, where each segment builds upon the last. Each lesson is
+              structured to ensure a clear and guided learning path, securing a solid understanding of the content.
             </p>
+            <ShowMoreLess showMore={showLessonsMore} setShowMore={setShowLessonsMore} />
             <ul className="lessons__list">
               <li className="lessons__item">
                 <h4 className="lessons__subtitle">1. Teaching Format</h4>
@@ -401,15 +406,15 @@ const Main = () => {
               described 4 areas of focus) and capital. The issue is that most lose their capital before they gain the
               necessary knowledge to be successful.
             </p>
-            <p className="success__text text">
-              There is an old saying that in trading there are only two rules, the first is to not lose money and the
-              second is to not forget rule number one. It is however impossible not to lose some money as no-one has a
-              crystal bowl and losses are essentially a cost of doing business, the key then is to keep the losses
-              small. This is done through a predefined risk-reward ratio which limits how much you risk on each trade in
-              order to protect your capital when the trade does not work out in your favour.
-            </p>
             <ShowMoreLess showMore={showSuccessMore} setShowMore={setShowSuccessMore} />
             <div className="success__info">
+              <p className="success__text text">
+                There is an old saying that in trading there are only two rules, the first is to not lose money and the
+                second is to not forget rule number one. It is however impossible not to lose some money as no-one has a
+                crystal bowl and losses are essentially a cost of doing business, the key then is to keep the losses
+                small. This is done through a predefined risk-reward ratio which limits how much you risk on each trade
+                in order to protect your capital when the trade does not work out in your favour.
+              </p>
               <p className="success__text text">
                 After my 25 years in the markets (and still standing) I have found trading to be a mix of common sense,
                 human psychology and a dash of art. It requires time, discipline, a plan and an basic understanding of
@@ -456,7 +461,9 @@ const Main = () => {
               The objective of the introductory call is to have a quick meet-and-greet, assess compatibility, and talk
               about backgrounds, motivations, and what to expect moving forward.
             </p>
-            <button className="talk__btn btn btn_light" onClick={() => navigate('/booking')}>Book a call</button>
+            <button className="talk__btn btn btn_transparent" onClick={() => navigate('/booking')}>
+              Book a call
+            </button>
           </div>
         </div>
       </section>

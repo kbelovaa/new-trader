@@ -57,6 +57,7 @@
     bottom: 100px;
     z-index: 1;
     backdrop-filter: blur(10px);
+    width: 179px;
   }
 }
 
@@ -141,12 +142,23 @@
 
 .lessons {
   padding: 100px 100px 92px;
+  position: relative;
 
   &__title {
     color: #8ce4f8;
 
     & + .lessons__text {
       margin-bottom: 42px;
+    }
+  }
+
+  &__list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+
+    .expanded & {
+      max-height: 1000px;
     }
   }
 
@@ -252,6 +264,7 @@
     & .journey__text {
       color: #0f0f0f;
       margin-bottom: 33px;
+      line-height: 180%;
     }
   }
 
@@ -286,6 +299,7 @@
 
   &__text {
     margin-bottom: 33px;
+    line-height: 180%;
   }
 
   &__info {
@@ -313,5 +327,9 @@
   &__text {
     color: #121212;
     margin-bottom: 42px;
+  }
+
+  &__btn {
+    width: 179px;
   }
 }
