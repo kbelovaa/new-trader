@@ -14,6 +14,33 @@
   letter-spacing: 0.44px;
 }
 
+.show-more-less {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  right: 100px;
+  bottom: 50px;
+
+  &__text {
+    color: #284657;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 70%;
+    letter-spacing: 0.36px;
+    text-transform: uppercase;
+    margin-right: 10px;
+  }
+
+  &__arrow {
+    transition: transform 0.4s;
+
+    .expanded & {
+      transform: rotate(180deg);
+    }
+  }
+}
+
 .slide {
   display: flex;
   flex-direction: column;
@@ -45,7 +72,7 @@
   padding: 100px 100px 92px;
 
   &-section {
-    background: #DBF9FF;
+    background: #dbf9ff;
   }
 
   &__title {
@@ -65,7 +92,7 @@
   }
 
   &__title {
-    color: #8CE4F8;
+    color: #8ce4f8;
     font-size: 60px;
     font-weight: 600;
     line-height: 130%;
@@ -97,7 +124,7 @@
   padding: 100px 100px 92px;
 
   &-section {
-    background: #D3D3D3;
+    background: #d3d3d3;
   }
 
   &__title {
@@ -110,7 +137,8 @@
 
   &__payment {
     position: relative;
-    
+    cursor: pointer;
+
     &::after {
       content: '';
       position: absolute;
@@ -127,7 +155,7 @@
   padding: 100px 100px 92px;
 
   &__title {
-    color: #8CE4F8;
+    color: #8ce4f8;
 
     & + .lessons__text {
       margin-bottom: 42px;
@@ -153,39 +181,35 @@
 }
 
 .learning {
-  padding: 50px 100px 142px;
+  padding: 100px 100px 24px;
+  color: #284657;
+  position: relative;
+  transition: height 0.4s;
 
-  &-wrap {
-    background: #D3D3D3;
+  &-section {
+    background: #dbf9ff;
   }
 
-  &-intro {
-    padding: 100px 100px 42px;
-
-    &__title {
-      color: #284657;
-    }
-
-    &__text {
-      color: #284657;
-    }
+  &__text {
+    margin-bottom: 91px;
   }
 
-  &__part:first-of-type {
-    margin-bottom: 90px;
+  &__info {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+
+    .expanded & {
+      max-height: 1000px;
+    }
   }
 
   &__subtitle {
-    color: #284657;
     font-size: 40px;
     font-weight: 600;
     line-height: 70%;
     letter-spacing: 0.8px;
     margin-bottom: 42px;
-  }
-
-  &__text {
-    color: #284657;
   }
 }
 
@@ -197,7 +221,7 @@
   }
 
   &__title {
-    color: #8CE4F8;
+    color: #8ce4f8;
   }
 
   &__text {

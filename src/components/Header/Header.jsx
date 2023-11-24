@@ -24,12 +24,20 @@ const Header = () => {
     <div className="content">
       <div className="container">
         <header className="header">
-          <span className="header__label" onClick={() => navigate('/')}>Newtrader.net</span>
+          <span className="header__label" onClick={() => navigate('/')}>
+            Newtrader.net
+          </span>
           <nav className="header__menu">
             <ul className="header__links">
-              <li className="header__link" onClick={() => handleScroll(whyRef)}>Why trading</li>
-              <li className="header__link" onClick={() => handleScroll(lessonsRef)}>How it works</li>
-              <li className="header__link" onClick={() => handleScroll(pricingRef)}>Pricing</li>
+              <li className="header__link" onClick={() => handleScroll(whyRef)}>
+                Why trading
+              </li>
+              <li className="header__link" onClick={() => handleScroll(lessonsRef)}>
+                How it works
+              </li>
+              <li className="header__link" onClick={() => handleScroll(pricingRef)}>
+                Pricing
+              </li>
             </ul>
           </nav>
           <div className="burger" onClick={toggleMenu}>
@@ -39,7 +47,7 @@ const Header = () => {
           </div>
         </header>
       </div>
-      <Outlet context={{ whyRef, lessonsRef, pricingRef }}/>
+      <Outlet context={{ whyRef, lessonsRef, pricingRef }} />
       <Footer />
     </div>
   );

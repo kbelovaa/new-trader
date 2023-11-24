@@ -3,7 +3,7 @@
   src: url('../fonts/sfProDisplay-light.woff') format('woff');
   font-weight: 300;
 }
- //+
+//+
 @font-face {
   font-family: 'SF Pro Display';
   src: url('../fonts/sfProDisplay-regular.woff') format('woff');
@@ -69,4 +69,8 @@ input[type='number'] {
 
 ul {
   list-style-type: none;
+}
+
+a {
+  text-decoration: none;
 }
