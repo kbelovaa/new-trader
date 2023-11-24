@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useOutletContext } from 'react-router-dom';
+import { useNavigate, useOutletContext } from 'react-router-dom';
 import devicesImg from '../../images/devices.png';
 import ShowMoreLess from './ShowMoreLess/ShowMoreLess';
 import chart from '../../images/chart.png';
@@ -8,6 +8,7 @@ import './Main.scss';
 const Main = () => {
   const [showLearningMore, setShowLearningMore] = useState(false);
   const [showJourneyMore, setShowJourneyMore] = useState(false);
+  const [showSuccessMore, setShowSuccessMore] = useState(false);
 
   const [showEducationMore, setShowEducationMore] = useState(false);
   const [showDisciplineMore, setShowDisciplineMore] = useState(false);
@@ -16,6 +17,8 @@ const Main = () => {
 
   const { whyRef, lessonsRef, pricingRef } = useOutletContext();
 
+  const navigate = useNavigate();
+
   return (
     <div className="main">
       <section className="slide-section">
@@ -23,7 +26,7 @@ const Main = () => {
           <div className="slide">
             <h1 className="slide__title">New to trading?</h1>
             <img src={devicesImg} alt="Devices" className="slide__image" />
-            <button className="slide__btn btn-light">Book a call</button>
+            <button className="slide__btn btn btn_transparent" onClick={() => navigate('/booking')}>Book a call</button>
           </div>
         </div>
       </section>
@@ -171,6 +174,7 @@ const Main = () => {
             </p>
             <ShowMoreLess showMore={showJourneyMore} setShowMore={setShowJourneyMore} />
             <div className="journey__additional">
+              <img src={chart} alt="Chart" className="journey__chart" />
               <ul className="journey__stages">
                 <li className="journey__stage">
                   <h3 className="journey__subtitle subtitle">1. Uninformed Optimism</h3>
@@ -385,6 +389,74 @@ const Main = () => {
                 </li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+      <section className="success-section">
+        <div className="container">
+          <div className={`success ${showSuccessMore ? 'expanded' : ''}`}>
+            <h2 className="success__title title">Success</h2>
+            <p className="success__text text">
+              To be successful in the financial markets you need two things; knowledge (based on the previously
+              described 4 areas of focus) and capital. The issue is that most lose their capital before they gain the
+              necessary knowledge to be successful.
+            </p>
+            <p className="success__text text">
+              There is an old saying that in trading there are only two rules, the first is to not lose money and the
+              second is to not forget rule number one. It is however impossible not to lose some money as no-one has a
+              crystal bowl and losses are essentially a cost of doing business, the key then is to keep the losses
+              small. This is done through a predefined risk-reward ratio which limits how much you risk on each trade in
+              order to protect your capital when the trade does not work out in your favour.
+            </p>
+            <ShowMoreLess showMore={showSuccessMore} setShowMore={setShowSuccessMore} />
+            <div className="success__info">
+              <p className="success__text text">
+                After my 25 years in the markets (and still standing) I have found trading to be a mix of common sense,
+                human psychology and a dash of art. It requires time, discipline, a plan and an basic understanding of
+                human psychology and game theory. Make sure to spend enough time on each side of the trade, both before
+                and after. Before, through proper filtering and analysis and scoring each trade probability through the
+                system you will learn. Only trade the trades that has a high enough probability to be profitable. Use
+                automation to keep your own psychology of fear and greed out of it. And after, log and review it and
+                make sure you learn something from each trade. Trading is learned in increments, so the target is to
+                spend enough time on each trade to build a deeper understanding of the forces at play. You will learn
+                how psychology plays an intricate part in trading. If you win, your greed kicks in, you feel fantastic,
+                and take bigger risks to win more faster until the next trade works against you. If you lose, you want
+                to take revenge and take bigger risks to regain what you lost until.. (yes, you guessed it) the next
+                trade works against you.
+              </p>
+              <p className="success__text text">
+                A thing to understand is that trading in reality is a game where everyone plays against everyone else.
+                If your broker recommends you to buy a certain stock it is because he has inventory of it or gets a
+                larger commission to sell that specific stock. And if he recommends you to sell, it is because he knows
+                he can sell it someone else for a higher price. In the last years YouTube is full of self-exclaimed
+                tubers who talk about certain stocks or sectors like they are qualified experts when in reality most of
+                them have less than $ 1,000 invested in it themselves.
+              </p>
+              <p className="success__text text">
+                Another imminent danger is to analyse to a point where common sense disappears. An interesting read on
+                this is the first know market bubble, the tulip mania in the Netherlands in 1634 to 1637.
+              </p>
+              <p className="success__text text">
+                When learning to fly it is required to memorize emergency checklists and the first thing on the
+                checklist for “In air engine failure” is actually to “fly the airplane”. This sounds almost stupid, but
+                the reality is that many lives have been lost due to pilots becoming too focused on the instruments
+                inside cockpit and not to navigate the plane to a safe place to land. Trading is a game of longevity.
+                Follow the principles you will learn here and you will stay alive and gradually accumulate both
+                knowledge and capital.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="talk-section">
+        <div className="container">
+          <div className="talk">
+            <h2 className="talk__title title">Interested? Let’s talk</h2>
+            <p className="talk__text text">
+              The objective of the introductory call is to have a quick meet-and-greet, assess compatibility, and talk
+              about backgrounds, motivations, and what to expect moving forward.
+            </p>
+            <button className="talk__btn btn btn_light" onClick={() => navigate('/booking')}>Book a call</button>
           </div>
         </div>
       </section>

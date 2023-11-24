@@ -6,12 +6,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 80px 100px;
+  padding: 40px 100px;
 
   &__label {
-    font-size: 22px;
+    font-size: 20px;
     cursor: pointer;
-    margin: 0 147px 0 7px;
+    margin-right: 262px;
   }
 
   &__links {
@@ -24,7 +24,7 @@
     cursor: pointer;
 
     &:last-of-type {
-      margin-right: 294px;
+      margin-right: 390px;
     }
   }
 }

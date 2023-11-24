@@ -36,7 +36,7 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  padding: 120px 100px 45px 100px;
+  padding: 90px 100px 49px 100px;
 
   &__title {
     color: #274455;
@@ -44,7 +44,7 @@
     font-weight: 500;
     line-height: 70%;
     letter-spacing: -1.2px;
-    margin-bottom: 135px;
+    margin-bottom: 140px;
   }
 
   &__image {
@@ -52,9 +52,11 @@
   }
 
   &__btn {
-    position: absolute;
+    position: fixed;
     right: 100px;
-    bottom: 133px;
+    bottom: 100px;
+    z-index: 1;
+    backdrop-filter: blur(10px);
   }
 }
 
@@ -216,6 +218,11 @@
     }
   }
 
+  &__chart {
+    width: 100%;
+    margin-bottom: 130px;
+  }
+
   &__stage {
     margin-bottom: 72px;
 
@@ -262,5 +269,49 @@
     .expanded-item & {
       max-height: 2000px;
     }
+  }
+}
+
+.success {
+  padding: 100px 100px 83px;
+  position: relative;
+
+  &-section {
+    background: #d8d8d8;
+  }
+
+  &__title {
+    color: #284657;
+  }
+
+  &__text {
+    margin-bottom: 33px;
+  }
+
+  &__info {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+
+    .expanded & {
+      max-height: 1000px;
+    }
+  }
+}
+
+.talk {
+  padding: 100px;
+
+  &-section {
+    background: #8ce4f8;
+  }
+
+  &__title {
+    color: #284657;
+  }
+
+  &__text {
+    color: #121212;
+    margin-bottom: 42px;
   }
 }
