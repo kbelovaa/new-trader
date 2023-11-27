@@ -4,6 +4,7 @@ import Footer from '../Footer/Footer';
 import './Header.scss';
 
 const Header = () => {
+  const [showNav, setShowNav] = useState(false);
   const [isBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
 
   const whyRef = useRef(null);
@@ -11,6 +12,15 @@ const Header = () => {
   const pricingRef = useRef(null);
 
   const navigate = useNavigate();
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    if (pathname === '/') {
+      setShowNav(true);
+    } else {
+      setShowNav(false);
+    }
+  }, [pathname]);
 
   const toggleMenu = () => {
     setIsBurgerMenuOpen((state) => !state);
@@ -27,7 +37,7 @@ const Header = () => {
           <span className="header__label" onClick={() => navigate('/')}>
             Newtrader.net
           </span>
-          <nav className="header__menu">
+          <nav className={showNav ? 'header__menu' : 'hidden'}>
             <ul className="header__links">
               <li className="header__link" onClick={() => handleScroll(whyRef)}>
                 Why trading

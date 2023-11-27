@@ -29,6 +29,9 @@ const Main = () => {
         <div className="container">
           <div className="slide">
             <h1 className="slide__title">New to trading?</h1>
+            <p className="slide__text text">
+              Learn how to trade stocks with confidence through a structured process designed to deliver results. The 4-week high-impact program is offered at $10,000 with limited availability.
+            </p>
             <img src={devicesImg} alt="Devices" className="slide__image" />
           </div>
         </div>
@@ -461,9 +464,6 @@ const Main = () => {
               The objective of the introductory call is to have a quick meet-and-greet, assess compatibility, and talk
               about backgrounds, motivations, and what to expect moving forward.
             </p>
-            <button className="talk__btn btn btn_transparent" onClick={() => navigate('/booking')}>
-              Book a call
-            </button>
           </div>
         </div>
       </section>
