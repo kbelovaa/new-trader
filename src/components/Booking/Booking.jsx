@@ -3,6 +3,7 @@ import { format, parse } from 'date-fns';
 import { callTime, platforms } from '../../constants/booking';
 import Calendar from '../Calendar/Calendar';
 import './Booking.scss';
+import ModalWindow from '../ModalWindow/ModalWindow';
 
 const Booking = () => {
   const [selectedDay, setSelectedDay] = useState(new Date().toLocaleDateString());
@@ -12,15 +13,22 @@ const Booking = () => {
   const [email, setEmail] = useState('');
   const [displayedName, setDisplayedName] = useState('');
   const [displayedEmail, setDisplayedEmail] = useState('');
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    const selectedDay = callTime.filter((day) => day.date >= new Date().toLocaleDateString())[0];
+    const selectedDay = callTime.filter((day) => parse(day.date, 'dd.MM.yyyy', new Date()) >= new Date().setHours(0, 0, 0, 0))[0];
     setSelectedDay(selectedDay.date);
     setSelectedTime(selectedDay.time[0]);
   }, []);
 
   const handleInputBlur = (setValue, value) => {
     setValue(value);
+  };
+
+  const handleFormSubmit = () => {
+    if (name && email) {
+      setIsModalOpen(true);
+    }
   };
 
   return (
@@ -94,9 +102,10 @@ const Booking = () => {
             <p className="booking__text">{displayedName}</p>
             <p className="booking__text">{displayedEmail}</p>
           </div>
-          <button className="booking__btn btn btn_solid">Book</button>
+          <button className="booking__btn btn btn_solid" onClick={handleFormSubmit}>Book</button>
         </div>
       </div>
+      <ModalWindow isOpen={isModalOpen} setIsOpen={setIsModalOpen} email={email} />
     </section>
   );
 };
