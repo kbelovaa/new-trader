@@ -13,7 +13,7 @@ const FaqCard = ({ question, answer }) => {
       <div className="faq-card__line">
         <h3 className="faq-card__question">{question}</h3>
         <svg
-          className={isExpanded ? 'arrow rotated' : 'arrow'}
+          className={`faq-card__arrow ${isExpanded ? 'rotated' : ''}`}
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"

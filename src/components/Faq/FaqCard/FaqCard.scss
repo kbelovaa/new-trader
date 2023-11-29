@@ -39,11 +39,14 @@
   }
 
   &__answer {
-    line-height: 130%;
     margin-top: 40px;
   }
 
-  & .arrow {
+  &__arrow {
     transition: all 0.4s ease;
+
+    &.rotated {
+      transform: rotate(180deg);
+    }
   }
 }
